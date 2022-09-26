@@ -1,3 +1,35 @@
 <div class="container">
-    APP COMPONENT
+  <div *ngIf="step === 0" class="product-container w-50 border">
+    <div class="product d-flex justify-content-around">
+      <p class="product-name">Product 1</p>
+      <button class="btn btn-primary">+</button>
+      <p class="ammount border p-2">0</p>
+      <button class="btn btn-primary">-</button>
+    </div>
+    <div class="product d-flex justify-content-start m-2">
+      <p class="product-name">Product 2</p>
+      <button class="btn btn-primary">+</button>
+      <p class="ammount border p-2">0</p>
+      <button class="btn btn-primary">-</button>
+    </div>
+  </div>
+
+  <div *ngIf="step===1" class="w-50 border p-2">
+    <label for="name">Name</label>
+    <input type="text" name="Name" id="name" class="w-100" >
+    <label for="email">Email</label>
+    <input type="email" name="mail" id="mail" class="w-100">
+  </div>
+
+  <div *ngIf="step===2" class="w-50 border p-2">
+    <label for="address">Address</label>
+    <input type="text" name="address" id="address" class="w-100">
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" class="w-100">
+  </div>
+
+  <!-- Display next and previous containers -->
+  <button *ngIf="step!==0" class="btn btn-primary m-1" (click)="displayPrevious()" >pervious</button>
+  <button *ngIf="step!=2" class="btn btn-primary m-1" (click)="displayNext()">next</button>
+  <button *ngIf="step===2" class="btn btn-primary">Confirm</button>
 </div>
