@@ -1,12 +1,126 @@
 <main>
-  <form action="">
+  <form action="" class="col-6 m-auto mt-4 border p-3 rounded shadow">
     <!-- tipo di utente -->
-    <select name="tipo" id="tipo" class="form-select">
-      <option selected>Tipo di Utente</option>
-      <option value="PF">Persona Fisica</option>
-      <option value="PG">Persona Giuridica</option>
-    </select>
+    <div class="mb-3">
+      <select name="tipo" id="tipo" class="form-select">
+        <option selected>Tipo di Utente</option>
+        <option value="PF">Persona Fisica</option>
+        <option value="PG">Persona Giuridica</option>
+      </select>
+    </div>
+    <!-- Nome e cognome -->
+    <div class="mb-3 row">
+      <div class="col">
+        <label for="name" class="form-label">Nome</label>
+        <input
+          type="text"
+          placeholder="Inserire il Nome"
+          class="form-control"
+          id="name"
+        />
+      </div>
+      <div class="col">
+        <label for="surname" class="form-label">Cognome</label>
+        <input
+          type="text"
+          id="surname"
+          class="form-control"
+          placeholder="Inserisci il Cognome"
+        />
+      </div>
+    </div>
+    <!-- Ragione Sociale -->
+    <div class="mb-3">
+      <label for="ragione-sociale" class="form-label">Ragione Sociale</label>
+      <input
+        type="text"
+        name="ragione-sociale"
+        id="ragione-sociale"
+        class="form-control"
+      />
+    </div>
     <!-- indirizzo -->
-    
+    <div class="row mb-3">
+      <div class="col">
+        <label for="tipo-via" class="form-label"
+          >Via / Piazza / Corso ...</label
+        >
+        <input
+          type="text"
+          id="tipo-via"
+          class="form-control"
+          placeholder="es. Piazza"
+        />
+      </div>
+      <div class="col">
+        <label for="indirizzo" class="form-label">Indirizzo</label>
+        <input
+          type="text"
+          id="indirizzo"
+          name="indirizzo"
+          class="form-control"
+        />
+      </div>
+      <div class="col-3">
+        <label for="numero-civico" class="form-label">Numero Civico</label>
+        <input
+          type="number"
+          name="numero-civico"
+          id="numero-civico"
+          placeholder="Numero Civico"
+          class="form-control"
+        />
+      </div>
+      <div class="col-2">
+        <label for="cap" class="form-label">CAP</label>
+        <input
+          type="number"
+          name="cap"
+          id="cap"
+          placeholder="CAP"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+
+      <div class="col">
+        <label for="localita" class="form-label">Localita</label>
+        <input
+          type="text"
+          name="localita"
+          id="localita"
+          class="form-control"
+        />
+      </div>
+      <div class="col">
+        <label for="comune" class="form-label">Comune</label>
+        <input
+          type="text"
+          name="comune"
+          id="comune"
+          class="form-control"
+        />
+      </div>
+      <div class="col">
+        <label for="provincia" class="form-label">Provincia</label>
+        <input
+          type="text"
+          name="provincia"
+          id="provincia"
+          class="form-control"
+        />
+      </div>
+      <div class="col">
+        <label for="stato" class="form-label">Stato</label>
+        <input
+          type="text"
+          name="stato"
+          id="stato"
+          class="form-control"
+        />
+      </div>
+
+    </div>
   </form>
 </main>
