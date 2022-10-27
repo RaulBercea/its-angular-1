@@ -1,23 +1,52 @@
-<nav class="navbar bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand">The cocktail DB</a>
-  </div>
-</nav>
+<div class="row">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand h1">The Cocktail DB</a>
+      <form class="d-flex">
+        <input
+          class="form-control me-2 border-primary"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<div class="row mb-2 mt-2">
+  <select
+    [(ngModel)]="firstLetter"
+    class="form-select"
+    (change)="displayDrinkByLetter(firstLetter)"
+  >
+    <option [ngValue]="letter" *ngFor="let letter of alphabetArray">
+      {{ letter }}
+    </option>
+  </select>
+</div>
 
 <h1>Top Drinks</h1>
 <div class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4 my-2"
-      *ngFor="let drink of drinks"
-      role="button"
-      [routerLink]="'/drink/' + drink.idDrink">
-    <div class="card">
-      <img [src]="drink.strDrinkThumb" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">{{ drink.strDrink}}</h5>
-        
-        <div  class="btn btn-primary">Dettaglio</div>
+  <div
+    class="col-sm-12 col-md-6 col-lg-4 my-2"
+    *ngFor="let drink of drinks"
+    role="button"
+    [routerLink]="'/drink/' + drink.idDrink"
+  >
+    <div class="card rounded-3 shadow">
+      <div class="m-5 mb-2 shadow rounded-circle">
+        <img [src]="drink.strDrinkThumb" class="card-img-top rounded-circle" />
       </div>
-      <div class="card-footer">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ drink.strDrink }}</h5>
+      </div>
+      <hr>
+      <button class="btn btn-dark rounded-0 text-light mb-2 rounded-pill w-50 m-auto">
+        Dettaglio
+      </button>
+      <div class="card-footer border-0 bg-transparent mb-2 text-center">
         <small class="text-muted">{{ drink.strCategory }}</small>
       </div>
     </div>
