@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
     'Y',
     'Z',
   ];
-  firstLetter: string = localStorage.getItem('firstLetter') || this.alphabetArray[0];
+  firstLetter: string =
+    localStorage.getItem('firstLetter') || this.alphabetArray[0];
 
   constructor(private apiService: apiService) {}
 
