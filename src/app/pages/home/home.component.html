@@ -14,7 +14,7 @@
 
 <!-- Featured Drink Section -->
 <div class="container row m-auto">
-  <h2 class="mt-2 mb-2">Featured Drink</h2>
+  <app-featuredDrink></app-featuredDrink>
 </div>
 
 <!-- A-Z Pagination -->
@@ -31,11 +31,19 @@
     </select>
   </div>
 </div>
-
+<!-- Number of results -->
+<div class="container row m-auto">
+  <p *ngIf="numberOfResults !== 0" class="h2 text-center m-3">
+    Drinks found starting with {{ firstLetter }} : {{ numberOfResults }}
+  </p>
+  <p *ngIf="numberOfResults === 0" class="h2 text-center m-3">
+    No results found
+  </p>
+</div>
 <!-- The list of drinks -->
 <div class="row container m-auto">
   <div
-    class="col-sm-12 col-md-6 col-lg-4 my-2"
+    class="col-sm-12 col-md-6 col-lg-4 mt-2"
     *ngFor="let drink of drinks"
     role="button"
     [routerLink]="'/drink/' + drink.idDrink"

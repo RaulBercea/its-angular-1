@@ -1,15 +1,14 @@
 Home
     link in header per la pagina di ricerca - done
-    sezione featured (1 random cocktail con grafica diversa)
-    paginatore A-Z (con memoria)
+    sezione featured (1 random cocktail con grafica diversa) - done
+    paginatore A-Z (con memoria) - done
     elenco A-Z
-        numero dei risultati
-        messaggio diverso se 0
+        numero dei risultati - done
+        messaggio diverso se 0 - done
 Dettaglio
     scheda
     link nell'ingrediente per aprire un elenco di cocktail con quell'ingrediente
     cambio lingua
-
 Ricerca
     Ricerca per nome + bottone
     Ricerca per ingrediente + bottone (prepopolare lista degli ingredienti da API)

@@ -4,7 +4,7 @@ import { count } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   titolo = 'my-app';
@@ -15,12 +15,11 @@ export class AppComponent {
     this.titolo = nome;
   }
 
-  displayNext = ():void =>{
-      this.step++;
+  displayNext = (): void => {
+    this.step++;
+  };
 
-  }
-
-  displayPrevious = ():void =>{
-      this.step--;
-  }
+  displayPrevious = (): void => {
+    this.step--;
+  };
 }

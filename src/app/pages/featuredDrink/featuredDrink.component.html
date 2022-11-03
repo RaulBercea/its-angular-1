@@ -1,0 +1,20 @@
+<div class="mt-2 mb-2 row">
+  <p class="h1 col-3 m-auto">Featured Drink</p>
+</div>
+
+<div class="card col-lg-5 col-md-6 mb-2 mt-2 m-auto rounded">
+  <div class="g-0">
+    <div class="">
+      <img [src]="drink.strDrinkThumb" class="img-fluid rounded" />
+    </div>
+    <div class="card-body">
+      <div class="row d-flex justify-content-between m-3">
+        <div class="col-lg-7 border-end">
+          <h5 class="card-title h4 w-100">{{ drink.strDrink }}</h5>
+          <p class="lead">{{ drink.strCategory }}</p>
+        </div>
+        <button class="btn btn-outline-dark col-lg-4">Details</button>
+      </div>
+    </div>
+  </div>
+</div>

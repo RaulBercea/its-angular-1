@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DrinkComponent } from './pages/drink/drink.component';
+import { SearchPageComponent } from './pages/searchPage/searchPage.component';
+import { FeaturedDrinkComponent } from './pages/featuredDrink/featuredDrink.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +18,17 @@ import { DrinkComponent } from './pages/drink/drink.component';
     LoginComponent,
     HomeComponent,
     DrinkComponent,
+    SearchPageComponent,
+    FeaturedDrinkComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

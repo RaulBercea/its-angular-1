@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { apiService } from 'src/app/services/api.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit {
   drinks: any[] = [];
+  numberOfResults: number = 0;
   alphabetArray: string[] = [
     'A',
     'B',
@@ -46,6 +46,9 @@ export class HomeComponent implements OnInit {
       .searchCocktailByFirstLetter(letter)
       .subscribe((response: any) => {
         this.drinks = response.drinks;
+        Object.entries(this.drinks || 0).length === 0
+          ? (this.numberOfResults = 0)
+          : (this.numberOfResults = Object.entries(this.drinks).length);
       });
   }
 
