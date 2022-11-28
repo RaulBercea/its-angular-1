@@ -5,4 +5,20 @@ import { apiService } from 'src/app/services/api.service';
   selector: 'app-search',
   templateUrl: './searchPage.component.html',
 })
-export class SearchPageComponent {}
+export class SearchPageComponent {
+  constructor(private apiService: apiService) {}
+
+  searchResults: any[] = [];
+
+  jsonIn = {
+    searchInput: '',
+  };
+
+  handleSearch(): void {
+    this.apiService
+      .searchCocktailByName(`${this.jsonIn.searchInput}`)
+      .subscribe((response: any) => {
+        this.searchResults = response.drinks;
+      });
+  }
+}
