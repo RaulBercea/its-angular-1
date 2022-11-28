@@ -1,1 +1,29 @@
-<h1>Search</h1>
+<nav class="navbar navbar-light col-12 bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand h1 text-white">The Cocktail DB</a>
+    <button
+      [routerLink]="'/search/'"
+      class="btn btn-outline-light"
+      type="submit"
+    >
+      Search
+    </button>
+  </div>
+</nav>
+<h1 class="col-2 m-auto my-4">Search</h1>
+<div class="input-group">
+  <form class="m-auto">
+    <div class="row mb-3">
+      <div class="col-sm-8">
+        <input
+          type="text"
+          class="form-control"
+          id="drinkName"
+          name="drinkName"
+          placeholder="Search a drink"
+        />
+      </div>
+      <button class="btn btn-dark col-sm-4">Search</button>
+    </div>
+  </form>
+</div>

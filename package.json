@@ -39,5 +39,17 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.7.2"
-  }
+  },
+  "description": "nome cognome / ragione sociale\r indirizzo qualche contatto\r email telefono  pec\r fax opzionale\r nome senza numero o cose strane\r maggiorenni (flag)\r indirizzo:\r     - tipo di via (via, corso...)\r     - nome della via\r     - numero civico\r     - cap\r     - località comuni provincia\r     - stato\r prodotti interessanti (auto, vita o salute) opzionale\r sesso\r partita iva / codice fiscale",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulBercea/its-angular-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaulBercea/its-angular-1/issues"
+  },
+  "homepage": "https://github.com/RaulBercea/its-angular-1#readme"
 }
