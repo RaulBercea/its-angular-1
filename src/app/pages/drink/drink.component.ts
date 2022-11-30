@@ -17,7 +17,7 @@ export class DrinkComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.data.subscribe(({ drink }) => {
-      this.drink = drink.dks[0];
+      this.drink = drink.drinks[0];
       this.drink.ingredients = [];
       this.drink.instructions = [];
       Object.keys(this.drink).forEach((key) => {
