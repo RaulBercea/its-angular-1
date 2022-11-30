@@ -15,29 +15,27 @@ export class DrinkComponent implements OnInit {
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('idDrink')!;
-    this.httpClient
-      .get('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id)
-      .subscribe((response: any) => {
-        this.drink = response.drinks[0];
-        this.drink.ingredients = [];
-        this.drink.instructions = [];
-        Object.keys(this.drink).forEach((key) => {
-          if (key.startsWith('strIngredient') && this.drink[key]) {
-            const index = key.replace('strIngredient', '');
-            this.drink.ingredients.push({
-              name: this.drink[key],
-              measure: this.drink['strMeasure' + index],
-            });
+
+    this.route.data.subscribe(({ drink }) => {
+      this.drink = drink.dks[0];
+      this.drink.ingredients = [];
+      this.drink.instructions = [];
+      Object.keys(this.drink).forEach((key) => {
+        if (key.startsWith('strIngredient') && this.drink[key]) {
+          const index = key.replace('strIngredient', '');
+          this.drink.ingredients.push({
+            name: this.drink[key],
+            measure: this.drink['strMeasure' + index],
+          });
+        }
+        if (key.startsWith('strInstructions') && this.drink[key]) {
+          let lang = key.replace('strInstructions', '');
+          if (!lang) {
+            lang = 'EN';
           }
-          if (key.startsWith('strInstructions') && this.drink[key]) {
-            let lang = key.replace('strInstructions', '');
-            if (!lang) {
-              lang = 'EN';
-            }
-            this.drink.instructions[lang] = this.drink[key];
-          }
-        });
+          this.drink.instructions[lang] = this.drink[key];
+        }
       });
+    });
   }
 }
