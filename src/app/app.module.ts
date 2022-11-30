@@ -12,6 +12,8 @@ import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchPageComponent } from './pages/searchPage/searchPage.component';
 import { FeaturedDrinkComponent } from './pages/featuredDrink/featuredDrink.component';
 
+import { BlockUIModule } from 'ng-block-ui';
+import { BlockUIHttpModule } from 'ng-block-ui/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { FeaturedDrinkComponent } from './pages/featuredDrink/featuredDrink.comp
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    BlockUIModule.forRoot(),
+    BlockUIHttpModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

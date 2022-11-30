@@ -38,4 +38,8 @@ export class apiService {
       `https://www.thecocktaildb.com/api/json/v1/1/random.php`
     );
   }
+
+  getDrinkById(id: number|string){
+    return this.httpClient.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+  }
 }
