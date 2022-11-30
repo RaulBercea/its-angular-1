@@ -19,6 +19,8 @@ export class SearchPageComponent {
       .searchCocktailByName(`${this.jsonIn.searchInput}`)
       .subscribe((response: any) => {
         this.searchResults = response.drinks;
+
+        console.log(this.searchResults);
       });
   }
 }

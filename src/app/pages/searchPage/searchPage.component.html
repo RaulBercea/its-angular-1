@@ -20,10 +20,38 @@
           class="form-control"
           id="drinkName"
           name="drinkName"
+          [(ngModel)]="jsonIn.searchInput"
           placeholder="Search a drink"
         />
       </div>
-      <button class="btn btn-dark col-sm-4">Search</button>
+      <button (click)="handleSearch()" class="btn btn-dark col-sm-4">Search</button>
     </div>
   </form>
+</div>
+
+<div class="row container m-auto">
+  <div
+    class="col-sm-12 col-md-6 col-lg-4 mt-2"
+    *ngFor="let drink of searchResults"
+    role="button"
+    [routerLink]="'/drink/' + drink.idDrink"
+  >
+    <div class="card rounded-3 shadow">
+      <div class="m-5 mb-2 shadow rounded-circle">
+        <img [src]="drink.strDrinkThumb" class="card-img-top rounded-circle" />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ drink.strDrink }}</h5>
+      </div>
+      <hr />
+      <button
+        class="btn btn-dark rounded-0 text-light mb-2 rounded-pill w-50 m-auto"
+      >
+        Details
+      </button>
+      <div class="card-footer border-0 bg-transparent mb-2 text-center">
+        <small class="text-muted">{{ drink.strCategory }}</small>
+      </div>
+    </div>
+  </div>
 </div>
